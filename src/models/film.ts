@@ -1,0 +1,21 @@
+import mongoose from 'mongoose';
+
+export class FilmDoc extends mongoose.Document {
+    nom : String;
+    duree : Number;
+}
+
+const filmSchema = new mongoose.Schema({
+    nom : {
+        type : String
+    },
+    imgURL : {
+        type : String
+    },
+    duree : {
+        //Exprimé en nombre de minutes
+        type : Number
+    }
+});
+
+export const Film = mongoose.model<FilmDoc>("Film", filmSchema);
